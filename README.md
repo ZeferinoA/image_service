@@ -40,4 +40,4 @@ else:
 ```
 
 ### UML Diagram
-!(UML.jpeg)
+![UML Diagram](UML.jpeg)
