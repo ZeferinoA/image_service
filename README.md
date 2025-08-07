@@ -38,3 +38,6 @@ if response.status_code == 200:
 else:
     print(f"Failed to retrieve image: {response.text}")
 ```
+
+### UML Diagram
+!(UML.jpeg)
