@@ -27,7 +27,7 @@ def upload_image():
         file_extension = os.path.splitext(file.filename)[1]
         unique_id = str(uuid.uuid4())
         new_filename = unique_id + file_extension
-        
+
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
 
         return jsonify({"id": unique_id}), 201
@@ -42,4 +42,4 @@ def get_image(image_id):
         return jsonify({"error": f"Image with ID {image_id} not found."}), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='127.0.0.1', port=5001)
