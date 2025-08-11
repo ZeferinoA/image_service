@@ -2,7 +2,7 @@ import requests
 import os
 
 # The address where your Flask microservice is running
-BASE_URL = "http://127.0.0.1:5000"
+BASE_URL = "http://127.0.0.1:5001"
 
 # The image file
 IMAGE_PATH = "test_photo.png"
@@ -16,12 +16,12 @@ def run_test():
     # 1. --- UPLOAD THE IMAGE ---
     # This part programmatically requests data from the microservice
     print(f"\n[REQUEST] Uploading '{IMAGE_PATH}' to {BASE_URL}/upload...")
-    
+
     try:
         with open(IMAGE_PATH, 'rb') as image_file:
             files = {'image': image_file}
             response = requests.post(f"{BASE_URL}/upload", files=files)
-        
+
         # Check if the upload was successful
         if response.status_code == 201:
             # 2. --- RECEIVE THE RESPONSE (IMAGE ID) ---
